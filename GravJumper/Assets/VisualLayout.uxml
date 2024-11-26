@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1;">
+        <ui:VisualElement style="flex-grow: 1; bottom: auto; top: auto; justify-content: flex-start; align-self: flex-start;">
+            <ui:ProgressBar value="22" title="Health" focusable="false" name="HealthProgressBar" style="transition-property: all; transition-duration: 0s; transition-timing-function: ease; transition-delay: 0s; width: 200px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
