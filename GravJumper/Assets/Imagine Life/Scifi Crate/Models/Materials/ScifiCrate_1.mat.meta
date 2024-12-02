@@ -1,0 +1,26 @@
+fileFormatVersion: 2
+guid: b8b5dc7de3943ba45a1b784e05aef7ca
+labels:
+- Prop
+- Junk
+- Transport
+- Cargo
+- PhysicalBased
+- PhysicalBasedShading
+- PBS
+- PBR
+- Box
+- Crate
+- Scifi
+- ScienceFiction
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 21965
+  packageName: Scifi Crate
+  packageVersion: 1.2
+  assetPath: Assets/Imagine Life/Scifi Crate/Models/Materials/ScifiCrate_1.mat
+  uploadId: 77848
