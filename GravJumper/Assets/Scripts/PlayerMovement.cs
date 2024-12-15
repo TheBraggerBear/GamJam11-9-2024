@@ -14,8 +14,12 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 CurrentMoveVelocity;
     private Vector3 MoveDampVelocity;
 
+    public bool gravityBoots;
+
     private Vector3 CurrentForceVelocity;
     private float midairSlowdownFactor = 0.999f; // Factor to slow down movement in midair
+    private float toggleCooldown = 1f; // Cooldown time for toggling gravity boots
+    private float lastToggleTime; // Time when the boots were last toggled
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,6 +30,8 @@ public class PlayerMovement : MonoBehaviour
         }
         GravityStrength = Physics.gravity.y; // Use Physics.gravity for gravity strength
         Controller = GetComponent<CharacterController>();
+        gravityBoots = true;
+        lastToggleTime = -toggleCooldown; // Initialize to allow immediate toggle
     }
 
     // Update is called once per frame
@@ -59,10 +65,15 @@ public class PlayerMovement : MonoBehaviour
         Ray groundCheckRay = new Ray(transform.position, Vector3.down);
         bool isGrounded = Physics.Raycast(groundCheckRay, 1.25f);
 
-        CurrentForceVelocity.y += Physics.gravity.y * Time.deltaTime; // Apply gravity
-        if (isGrounded)
+        if (Input.GetKey(KeyCode.LeftControl) && Time.time >= lastToggleTime + toggleCooldown) // Toggle gravity boots with cooldown
         {
-            //CurrentForceVelocity.y = -1f; // Small downward force to keep grounded
+            gravityBoots = !gravityBoots;
+            lastToggleTime = Time.time; // Update last toggle time
+        }
+
+        if (isGrounded && gravityBoots)
+        {
+            CurrentForceVelocity.y = -1f; // Small downward force to keep grounded
 
             if (Input.GetKey(KeyCode.Space))
             {
@@ -74,6 +85,10 @@ public class PlayerMovement : MonoBehaviour
             if (GravityStrength == 0) // Only apply midair slowdown if gravity is zero
             {
                 CurrentForceVelocity.y *= midairSlowdownFactor; // Slow down vertical movement
+            }
+            else
+            {
+                CurrentForceVelocity.y = Physics.gravity.y; // Apply gravity
             }
         }
 
