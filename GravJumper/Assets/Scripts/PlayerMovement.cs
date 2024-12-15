@@ -62,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
         CurrentForceVelocity.y += Physics.gravity.y * Time.deltaTime; // Apply gravity
         if (isGrounded)
         {
-            CurrentForceVelocity.y = -1f; // Small downward force to keep grounded
+            //CurrentForceVelocity.y = -1f; // Small downward force to keep grounded
 
             if (Input.GetKey(KeyCode.Space))
             {
