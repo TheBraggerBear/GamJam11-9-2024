@@ -78,6 +78,13 @@ public class PlayerMovement : MonoBehaviour
                 bootIcon.SetActive(false);
             }
 
+            if (!gravityBoots)
+            {
+                CurrentForceVelocity.y = Physics.gravity.y; // Apply gravity
+
+                Controller.Move(CurrentForceVelocity * Time.deltaTime); // this should move the player on the y axis
+            }
+
         }
         else
         {
@@ -90,6 +97,7 @@ public class PlayerMovement : MonoBehaviour
             else
             {
                 CurrentForceVelocity.y = Physics.gravity.y; // Apply gravity
+                //CurrentForceVelocity += Vector3.up * (Physics.gravity.y * Time.deltaTime);
             }
         }
 
