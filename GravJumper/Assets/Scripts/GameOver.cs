@@ -17,12 +17,12 @@ public class GameOver : MonoBehaviour
             Debug.Log("Game Over!");
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene("GameOverScene");
         }
     }
 
     public void RestartGame()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("SampleScene");
     }
 }

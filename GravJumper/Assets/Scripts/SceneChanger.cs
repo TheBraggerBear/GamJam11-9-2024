@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -35,5 +36,10 @@ public class SceneChanger : MonoBehaviour
             // Load the specified scene
             SceneManager.LoadScene(sceneToLoad);
         }
+    }
+
+    public void LoadLevel()
+    {
+        SceneManager.LoadScene("SampleScene");
     }
 }

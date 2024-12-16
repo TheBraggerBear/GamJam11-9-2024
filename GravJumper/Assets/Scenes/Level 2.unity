@@ -2977,7 +2977,7 @@ MonoBehaviour:
   RunSpeed: 10
   MaxFallSpeed: 30
   FallDamageMultiplier: 1
-  player: {fileID: 0}
+  player: {fileID: 391772191}
   bootIcon: {fileID: 1711509175}
 --- !u!143 &391772194
 CharacterController:
