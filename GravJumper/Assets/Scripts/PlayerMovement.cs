@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 CurrentForceVelocity;
     private float midairSlowdownFactor = 0.999f; // Factor to slow down movement in midair
-    private float toggleCooldown = 1f; // Cooldown time for toggling gravity boots
+    private float toggleCooldown = 0.5f; // Cooldown time for toggling gravity boots
     private float lastToggleTime; // Time when the boots were last toggled
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
         Controller.Move(CurrentMoveVelocity * Time.deltaTime); // this should move the player on the x and z axis
 
         Ray groundCheckRay = new Ray(transform.position, Vector3.down);
-        bool isGrounded = Physics.Raycast(groundCheckRay, 1.25f);
+        bool isGrounded = Physics.Raycast(groundCheckRay, 1.01f);
 
         if (Input.GetKey(KeyCode.LeftControl) && Time.time >= lastToggleTime + toggleCooldown) // Toggle gravity boots with cooldown
         {
@@ -71,13 +71,15 @@ public class PlayerMovement : MonoBehaviour
             lastToggleTime = Time.time; // Update last toggle time
         }
 
-        if (isGrounded && gravityBoots)
+        if (isGrounded)
         {
-            CurrentForceVelocity.y = -1f; // Small downward force to keep grounded
-
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKey(KeyCode.Space)) // Change to Input.GetKeyDown for jump
             {
                 CurrentForceVelocity.y = JumpStrength; // Jump
+            }
+            if (isGrounded && gravityBoots)
+            {
+                CurrentForceVelocity.y = 0; // Prevent gravity from affecting the player
             }
         }
         else
