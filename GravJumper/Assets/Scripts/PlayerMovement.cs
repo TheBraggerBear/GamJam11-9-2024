@@ -65,10 +65,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (isGrounded)
         {
-            Debug.Log("ets");
             if (Input.GetKeyDown(KeyCode.LeftControl)) // Toggle gravity boots
             {
-                Debug.Log("we did it");
                 gravityBoots = !gravityBoots;
                 bootIcon.SetActive(gravityBoots);
             }

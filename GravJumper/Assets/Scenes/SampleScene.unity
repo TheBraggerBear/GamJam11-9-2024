@@ -2740,7 +2740,7 @@ MonoBehaviour:
   MaxFallSpeed: 30
   FallDamageMultiplier: 1
   player: {fileID: 0}
-  gravityBoots: 0
+  bootIcon: {fileID: 1750475717}
 --- !u!143 &673411636
 CharacterController:
   m_ObjectHideFlags: 0
@@ -7554,8 +7554,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -7611,8 +7611,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_IgnoreReversedGraphics: 1
   m_BlockingObjects: 0
   m_BlockingMask:
@@ -7628,8 +7628,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
@@ -8593,7 +8593,4 @@ SceneRoots:
   - {fileID: 1002750883}
   - {fileID: 1445906499}
   - {fileID: 673411640}
-  - {fileID: 907212289}
-  - {fileID: 1810491295}
   - {fileID: 1752549666}
-  - {fileID: 1677670253}
